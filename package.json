@@ -1,0 +1,26 @@
+{
+  "name": "sit725-2021-t2-prac3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chashamsarao/sit725-2021-t2-prac3.git"
+  },
+  "keywords": [
+    "\"node\""
+  ],
+  "author": "Chasham Sarao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chashamsarao/sit725-2021-t2-prac3/issues"
+  },
+  "homepage": "https://github.com/chashamsarao/sit725-2021-t2-prac3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  }
+}
