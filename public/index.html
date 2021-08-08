@@ -47,10 +47,65 @@
                     style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
             </div>
             <div class="row center " style="padding-top:50px;">
-                <a id="testButton" class="waves-effect waves-light btn-large " style="background-color: #9E65A9;"><i
-                        class="material-icons left" style="color:white; font-size:larger">emoji_people</i>Click me!</a>
+                <a id="testButton" class="waves-effect waves-light btn-large " style="background-color: #9E65A9" data-target="modal1"><i
+                        class="material-icons left" style="color:white; font-size:larger">emoji_people</i>Click here to form a group</a>
             </div>
         </div>
+
+          <div class="row" id="card-section">
+            <div class="col s4 center-align">
+              <div class="card medium">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="https://media.cntraveler.com/photos/5e9929634ef68800092e94c6/master/w_1920%2Cc_limit/Chianti-Italy-GettyImages-944687294.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Italy<i class="material-icons right">more_vert</i></span>
+                  <p><a href="#">Travel Section</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">You are in Italy<i class="material-icons right">close</i></span>
+                  <p class="card-text">Hello There! I just wanted to say HI to you guys. See ya!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <!-- Modal Structure -->
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Placeholder" id="title" type="text" class="validate">
+                <label for="title">Title</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="image" type="text" class="validate">
+                <label for="image">Image</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="link" type="text" class="validate">
+                <label for="link">link</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="description" type="text" class="validate">
+                <label for="description">description</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 center-align">
+                <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+                    
 
     </main>
     <footer class="page-footer">
@@ -60,11 +115,7 @@
         </div>
     </footer>
 
-    <!-- socket IO Served by the server -->
-    <script src="/socket.io/socket.io.js"></script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
