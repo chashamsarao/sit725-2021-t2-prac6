@@ -1,3 +1,5 @@
+const { response } = require("express");
+
   const cardList = [
     {
         title: "Education",
@@ -13,6 +15,18 @@
     }
 ]
 
+const addProjectToApp = (project) => {
+  $ajax({
+    url: 'api/projects',
+    data: project,
+    type: 'POST',
+    success: (result) => {
+      alert(result.message);
+      location.reload();
+    }
+  })
+}
+
 const submitForm = () => {
   let formData = {};
   formData.title = $('#title').val();
@@ -20,11 +34,20 @@ const submitForm = () => {
   formData.link = $('#link').val();
   formData.description = $('#description').val();
 
-  console.log("Project added successfully ", formData);
-  cardList.push(formData)
-  alert(result.message);
-  location.reload();
-}
+  console.log("Form data submitted ", formData);
+  addProjectToApp(formData)
+
+  const getProjects = () => {
+    $.get('api/projects', (response) => {
+      if(response.statusCode== 200) {
+        console.log(response)
+        addCards(response.data);
+      }
+      else {
+        console.log(response)
+      }
+    })
+  }
 
 const addCards = (items) => {
   items.forEach(item => {
@@ -61,6 +84,4 @@ $(document).ready(function(){
     $.get('/test?user_name="Fantastic User"',(result)=>{
       console.log(result)
     })
-  
-  
-  })
+  })}
