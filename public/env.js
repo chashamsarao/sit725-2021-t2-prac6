@@ -21,8 +21,8 @@
     data: project,
     type: 'POST',
     success: (result) => {
-   //   alert(result.message);
-   //   location.reload();
+      alert(result.message);
+      location.reload();
     }
   })
 }
@@ -38,18 +38,6 @@ const submitForm = () => {
   addProjectToApp(formData);
 };
 
-  const getProjects = () => {
-    $.get('api/projects', (response) => {
-      if(response.statusCode== 200) {
-        console.log(response)
-        addCards(response.data);
-      }
-      else {
-        console.log(response)
-      }
-    })
-  }
-
  const addCards = (items) => {
   items.forEach(item => {
       let itemToAppend = '<div class="col s4 center-align">'+
@@ -64,6 +52,17 @@ const submitForm = () => {
   });
 } 
 
+const getProjects = () => {
+  $.get('api/projects', (response) => {
+    if(response.statusCode== 200) {
+      console.log(response)
+      addCards(response.data);
+    }
+    else {
+      console.log(response)
+    }
+  })
+}
 
 
 $(document).ready(function(){

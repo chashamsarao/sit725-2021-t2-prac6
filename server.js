@@ -42,7 +42,7 @@ app.get('/api/projects', (req,res) => {
   console.log("New Project Added", req.body)
   var newProject = req.body;
   //cardList.push(newProject);
-  insertProjects(newProject,(err,result) => {
+  getProjects((err,result) => {
     if(err){
       res.json({statuscode: 400, message: err})
     }
