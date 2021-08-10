@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 
   const cardList = [
     {
@@ -15,14 +15,14 @@ const { response } = require("express");
     }
 ]
 
-const addProjectToApp = (project) => {
-  $ajax({
+ const addProjectToApp = (project) => {
+  $.ajax({
     url: 'api/projects',
     data: project,
     type: 'POST',
     success: (result) => {
-      alert(result.message);
-      location.reload();
+   //   alert(result.message);
+   //   location.reload();
     }
   })
 }
@@ -35,7 +35,8 @@ const submitForm = () => {
   formData.description = $('#description').val();
 
   console.log("Form data submitted ", formData);
-  addProjectToApp(formData)
+  addProjectToApp(formData);
+};
 
   const getProjects = () => {
     $.get('api/projects', (response) => {
@@ -49,7 +50,7 @@ const submitForm = () => {
     })
   }
 
-const addCards = (items) => {
+ const addCards = (items) => {
   items.forEach(item => {
       let itemToAppend = '<div class="col s4 center-align">'+
   '<div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'+item.image+'">'+
@@ -61,27 +62,17 @@ const addCards = (items) => {
     '</div></div></div>';
     $("#card-section").append(itemToAppend)
   });
-}
+} 
 
 
 
 $(document).ready(function(){
   $('.materialboxed').materialbox();
-  $('#formSubmit').click(()=>{
-      submitForm();
-  })
-  addCards(cardList);
+  $('#formSubmit').click(submitForm);
+  getProjects();
+});
+  
+
+$(document).ready(function(){
   $('.modal').modal();
 });
-
-  
-  console.log('test')
-  $(document).ready(function(){
-    console.log('Ready')
-
-  
-    //test get call
-    $.get('/test?user_name="Fantastic User"',(result)=>{
-      console.log(result)
-    })
-  })}
