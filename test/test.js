@@ -1,7 +1,7 @@
 var expect  = require("chai").expect;
 var request = require("request");
 
-describe("Add Two Numbers", function() {
+describe("Checking the get request", function() {
     var url = "http://localhost:3000/api/projects";
     it("returns status 200 to check if api works", function(done) {
         request(url, function(error, response, body) {
